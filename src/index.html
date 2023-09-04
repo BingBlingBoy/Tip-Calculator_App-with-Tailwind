@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../dist/output.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </head>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        
+    </style>
+    <body class="font-SpaceMomo font-bold">
+        <main>
+            <div class="flex flex-col items-center justify-center h-screen w-screen bg-cyan">
+                <div class="mt-40 mb-10 sm:mb-20 sm:m-0">
+                    <img src="../images/logo.svg" alt="logo" class="max-w-full h-auto">
+                </div>
+                <div class="max-w-[50rem] grid grid-cols-1 sm:grid-cols-2 text-grayish-cyan border-2 bg-white border-black rounded-lg">
+                    <div id="inputs" class="mx-3 px-12">
+                        <div class="mt-12 relative">
+                            <div class="flex flex-row items-center justify-between">
+                                <h2>Bill</h2>
+                                <p id="errorBill" class="text-red"></p>
+                            </div>
+                            <p class="absolute bottom-2 left-3">$</p>
+                            <input id="bill__input" class="w-full text-2xl bg-v-light-grayish-cyan p-2 text-right text-dark-cyan focus:outline outline-strong-cyan" type="number" placeholder="0" value="">
+                        </div>
+                        <div id="tipping-options" class="mt-6 mb-6">
+                            <h2 class="my-3">Select Tip %</h2>
+                            <div class="grid grid-cols-3 grid-rows-2 gap-3">
+                                <button class="tips p-1  bg-dark-cyan text-white rounded-md text-xl hover:bg-strong-cyan hover:text-dark-cyan" type="button" value="0.05">5%</button>
+                                <button class="tips p-1 bg-dark-cyan text-white rounded-md text-xl hover:bg-strong-cyan hover:text-dark-cyan" type="button" value="0.10">10%</button>
+                                <button class="tips p-1 bg-dark-cyan text-white rounded-md text-xl hover:bg-strong-cyan hover:text-dark-cyan" type="button" value="0.15">15%</button>
+                                <button class="tips p-1 bg-dark-cyan text-white rounded-md text-xl hover:bg-strong-cyan hover:text-dark-cyan" type="button" value="0.25">25%</button>
+                                <button class="tips p-1 bg-dark-cyan text-white rounded-md text-xl hover:bg-strong-cyan hover:text-dark-cyan" type="button" value="0.50">50%</button>
+                                <input id="custom__tip" class="text-xl placeholder:text-left text-right pr-2 rounded-fit text-dark-cyan bg-v-light-grayish-cyan focus:outline outline-strong-cyan" type="number" name="custom-tip" placeholder="Custom" value="">
+                            </div>
+                        </div>
+                        <div class="mt-6 mb-12 relative">
+                            <div class="flex flex-row justify-between items-center">
+                                <h2>Number of people</h2>
+                                <p id="errorPeople" class="text-red"></p>
+                            </div>
+                            <p class="absolute bottom-2 left-3"><i class="fa-solid fa-user" style="color: #c0c0c0;"></i></p>
+                            <input id="people__input" class="w-full text-2xl bg-v-light-grayish-cyan p-2 text-dark-cyan text-right focus:outline outline-strong-cyan" type="number" name="" placeholder="1" value="">
+                        </div>
+                    </div>
+                    <div id="results" class="m-7 flex flex-col bg-dark-cyan rounded-lg">
+                        <div class="mt-5">
+                            <div class="flex flex-row m-5 justify-between">
+                                <p class="text-white text-md">Tip Amount <span class="text-xs"><br>/person</br></span></p>
+                                <h3 class="tip-amount text-4xl text-strong-cyan">40</h3>
+                            </div>
+                            <div class="flex flex-row m-5 justify-between">
+                                <p class="text-white text-md">Total <span class="text-xs"><br>/person</br></span></p>
+                                <h3 class="total-bill text-4xl text-strong-cyan">10</h3>
+                            </div>
+                        </div>
+                        <div class="mt-auto mx-5 p-5">
+                            <button id="reset__button" class="w-full p-2 bg-grayish-cyan text-dark-grayish-cyan text-xl rounded-md" type="reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main> 
+    </body>
+    <script defer src="script.js"></script>
+</html>
